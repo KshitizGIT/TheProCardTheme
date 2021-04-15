@@ -1,0 +1,68 @@
+﻿<section class="pt-page" data-id="home">
+     <div class="section-inner start-page-content">
+          <div class="page-header">
+          <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+                      <div class="photo">
+                        <img src="{{Model.ContentItem.Content.GeneralInformation.Image.Paths.first | asset_url}}" alt="{{ Model.ContentItem.Content.GeneralInformation.FirstName.Text}} {{  Model.ContentItem.Content.GeneralInformation.LastName.Text}}">
+                      </div>
+          </div>
+
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <div class="title-block">
+                        <h1>{{ Model.ContentItem.Content.GeneralInformation.FirstName.Text}} {{  Model.ContentItem.Content.GeneralInformation.LastName.Text}}</h1>
+                        <div class="owl-carousel text-rotation">                                    
+                          <div class="item">
+                            <div class="sp-subtitle">{{Model.ContentItem.Content.GeneralInformation.Designation.Text}}</div>
+                          </div>
+                          <div class="item">
+                            <div class="sp-subtitle">{{Model.ContentItem.Content.GeneralInformation.Designation.Text}}</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="social-links">
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="page-content">
+                  <div class="row">
+
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                      <div class="about-me">
+                        <div class="block-title">
+                          <h3>About <span>Me</span></h3>
+                        </div>
+                        <p>{{Model.ContentItem.Content.GeneralInformation.Description.Text }}</p>
+                      </div>
+                      <div class="download-resume">
+                        <a href="" class="btn btn-secondary">Download Resume</a>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                      <ul class="info-list">
+                          {% assign dobAge =  Model.ContentItem.Content.GeneralInformation.DOB.Value  | date: "%s" %}
+                          {% assign ageInYrs = "now" | date : "%s" | minus: dobAge | divided_by: 3600 | divided_by: 24 | divided_by: 365%}
+                        <li><span class="title">Age</span><span class="value">{{ageInYrs}}</span></li>
+                        <li><span class="title">Residence</span><span class="value">{{Model.ContentItem.Content.GeneralInformation.Residence.Text}}</span></li>
+                        <li><span class="title">Address</span><span class="value">{{Model.ContentItem.Content.GeneralInformation.Address.Text}}</span></li>
+                        <li><span class="title">e-mail</span><span class="value"><a href="mailto:{{Model.ContentItem.Content.GeneralInformation.Email.Text}}">{{Model.ContentItem.Content.GeneralInformation.Email.Text}}</a></span></li>
+                        <li><span class="title">Phone</span><span class="value">{{Model.ContentItem.Content.GeneralInformation.Phone.Text}}</span></li>
+                          {% assign availableString = "Not Available"%}
+                          {% if Model.ContentItem.Content.GeneralInformation.OpenForWork.Value %}
+                          {% assign availableString = "Available"  %}
+                          {% endif %}
+                        <li><span class="title">Freelance</span><span class="value available">{{availableString}}</span></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+</section>

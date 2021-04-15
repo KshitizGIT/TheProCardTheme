@@ -1,0 +1,19 @@
+﻿<section class="pt-page" data-id="services">
+  <div class="section-inner custom-page-content">
+    <div class="page-header color-1">
+      <h2>Services</h2>
+    </div>
+    <div class="page-content">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="block-title">
+            <h3>My <span>Services</span> </h3>
+          </div>
+        </div>
+        {% for item in Model.ContentItems %}
+         {{item | shape_build_display: "Summary" | shape_render }}
+        {%endfor %}
+      </div>
+    </div>
+  </div>
+</section>

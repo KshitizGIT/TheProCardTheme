@@ -1,0 +1,12 @@
+﻿<div class="col-sm-6 col-md-3">
+  <div class="service-block">
+    <div class="service-info">
+      <!--<i class="service-icon fa fa-shopping-cart"></i>-->
+      <div class="service-image">
+        <img src="{{Model.ContentItem.Content.Service.Image.Paths.first | asset_url}}" alt="{{ Model.ContentItem.Content.Service.Name.Text }}" class="mCS_img_loaded"/>
+      </div>
+      <h4>{{Model.ContentItem.Content.Service.Name.Text }}</h4>
+      <p>{{Model.ContentItem.Content.Service.Description.Text }}</p>
+    </div>
+  </div>
+</div>

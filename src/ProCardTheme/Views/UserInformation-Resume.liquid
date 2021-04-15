@@ -1,0 +1,87 @@
+﻿<section class="pt-page" data-id="resume">
+  <div class="section-inner custom-page-content">
+    <div class="page-header color-1">
+      <h2>Resume</h2>
+    </div>
+    {% assign educations = Model.ContentItems | where: "ContentType", "Education" %}
+    {% assign experiences = Model.ContentItems | where: "ContentType", "Experience" %}
+    {% assign skills = Model.ContentItems | where: "ContentType", "Skill" %}
+    <div class="page-content">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6k">
+          <div class="block">
+            <div class="block-title">
+              <h3>Education</h3>
+              <div class="timeline">
+                {% for item in educations%}
+                {{ item | shape_build_display: "Summary" | shape_render}}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="block">
+            <div class="block-title">
+              <h3>Experience</h3>
+            </div>
+            <div class="timeline">
+              {% for item in experiences%}
+              {{ item | shape_build_display: "Summary" | shape_render}}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="block">
+            <div class="block-title">
+              <h3>
+                Design <span>Skills</span>
+              </h3>
+            </div>
+            <div class ="skills-info">
+              {% for item in skills %}
+              {{ item | shape_build_display: "Summary" | shape_render}}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="block">
+            <div class="block-title">
+              <h3>
+                Coding <span>Skills</span>
+              </h3>
+            </div>
+
+            <div class="skills-info">
+              {% for item in skills %}
+              {{ item | shape_build_display: "Summary" | shape_render}}
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Download Resume Button -->
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="block">
+            <div class="center download-resume">
+              <a href="#" class="btn btn-secondary">Download Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Download Resume Button -->
+    </div>
+  </div>
+</section>
+<!-- End of Resume Subpage -->
+

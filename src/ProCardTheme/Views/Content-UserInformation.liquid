@@ -1,0 +1,41 @@
+﻿<div id="main" class="site-main">
+  <div class="pt-wrapper">
+    <div class="subpages">
+      {{ Model.Content | shape_render }}
+
+      <!-- Blog Subpage -->
+      <section class="pt-page" data-id="blog">
+
+        {% assign blogs = Queries.RecentBlogPosts | query %}
+        <div class="section-inner custom-page-content">
+          <div class="page-header color-1">
+            <h2>Blog</h2>
+          </div>
+          <div class="page-content">
+            <!-- Blog Posts Grid -->
+            <div class="blog-masonry two-columns">
+              {% for blog in blogs %}
+              {{blog | shape_build_display: "Summary" | shape_render}}
+              {%endfor %}
+            </div>
+            <!-- Blog Posts Grid -->
+          </div>
+        </div>
+      </section>
+      <!-- /Blog Subpage -->
+
+      <section class="pt-page" data-id="contact">
+        <div class="section-inner custom-page-content">
+          <div class="page-header color-1">
+            <h2>Contact</h2>
+          </div>
+          <div class="page-content">
+            <div class="row">
+              {% render_section "Contact" %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
