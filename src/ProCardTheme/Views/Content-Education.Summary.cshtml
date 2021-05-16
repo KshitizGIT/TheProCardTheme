@@ -1,0 +1,13 @@
+﻿@{ 
+    string yearString = string.Empty;
+    if (Model.ContentItem.Content.Education.Date.Value != null) {
+        yearString = ((DateTime)Model.ContentItem.Content.Education.Date.Value).Year.ToString();
+    }
+
+}
+<div class="timeline-item">
+    <h4 class="item-title">@Model.ContentItem.Content.Education.Course.Text.Value</h4>
+    <span class="item-period">@yearString</span>
+    <span class="item-small">@Model.ContentItem.Content.Education.Institution.Text</span>
+    <p class="item-description">@Model.ContentItem.Content.Education.Description.Text</p>
+</div>

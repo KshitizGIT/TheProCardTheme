@@ -1,0 +1,23 @@
+﻿<div class="testimonial-item">
+    <!-- Testimonial Author -->
+    <div class="testimonial-credits">
+        <!-- Picture -->
+        <div class="testimonial-picture">
+            <img asset-src="@Model.ContentItem.Content.Testimonial.Image.Paths[0]" alt="@Model.ContentItem.Content.Testimonial.Image.MediaTexts[0]" />
+        </div>
+        <!-- /Picture -->
+        <!-- Testimonial author information -->
+        <div class="testimonial-author-info">
+            <p class="testimonial-author">@Model.ContentItem.Content.Testimonial.Author.Text.Value</p>
+            <p class="testimonial-firm">@Model.ContentItem.Content.Testimonial.Firm.Text.Value</p>
+        </div>
+    </div>
+    <!-- /Testimonial author information -->
+    <!-- Testimonial Content -->
+    <div class="testimonial-content">
+        <div class="testimonial-text">
+            <p>"@Model.ContentItem.Content.Testimonial.Remarks.Text.Value"</p>
+        </div>
+    </div>
+    <!-- /Testimonial Content -->
+</div>

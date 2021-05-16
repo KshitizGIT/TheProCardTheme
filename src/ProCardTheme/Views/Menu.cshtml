@@ -1,0 +1,10 @@
+﻿@{
+    TagBuilder tag = new TagBuilder("ul");
+    tag.Attributes.Add("id", "nav");
+    tag.AddCssClass("site-main-menu");
+}
+@foreach (var menuItem in Model.Items)
+{
+    tag.InnerHtml.AppendHtml(await DisplayAsync(menuItem));
+}
+@tag

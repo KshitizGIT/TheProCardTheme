@@ -1,0 +1,166 @@
+﻿<!-- Services Subpage -->
+@model OrchardCore.Flows.ViewModels.BagPartViewModel
+@inject OrchardCore.ContentManagement.Display.IContentItemDisplayManager ContentItemDisplayManager
+
+<section class="pt-page" data-id="services">
+    <div class="section-inner custom-page-content">
+        <div class="page-header color-1">
+            <h2> Services</h2>
+        </div>
+        <div class="page-content">
+            <!-- My Services -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="block-title">
+                        <h3> My <span> Services</span> </h3>
+                    </div>
+                </div>
+
+                @foreach (var item in Model.ContentItems.Where(c => c.ContentType == "Service"))
+                {
+                    var itemDisplay = await ContentItemDisplayManager.BuildDisplayAsync(item, Model.BuildPartDisplayContext.Updater, "Summary", Model.BuildPartDisplayContext.GroupId);
+                    @await DisplayAsync(itemDisplay);
+                }
+
+            </div>
+            <!-- End of My Services -->
+            <!-- Clients -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="block-title">
+                        <h3> Clients</h3>
+                    </div>
+
+                    @foreach (var item in Model.ContentItems.Where(c => c.ContentType == "Client"))
+                    {
+                        var itemDisplay = await ContentItemDisplayManager.BuildDisplayAsync(item, Model.BuildPartDisplayContext.Updater, "Summary", Model.BuildPartDisplayContext.GroupId);
+                        @await DisplayAsync(itemDisplay);
+                    }
+                </div>
+            </div>
+            <!-- End of Clients -->
+            <!-- Testimonials -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="block-title">
+                        <h3> Testimonials</h3>
+                    </div>
+
+
+                    <div class="testimonials owl-carousel block">
+                        <!-- Testimonial 1 -->
+                        @foreach (var testimonial in Model.ContentItems.Where(c => c.ContentType == "Testimonial"))
+                        {
+                            var itemToDisplay = await ContentItemDisplayManager.BuildDisplayAsync(testimonial, Model.BuildPartDisplayContext.Updater, "Summary", Model.BuildPartDisplayContext.GroupId);
+                            @await DisplayAsync(itemToDisplay);
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <!-- End of Tesimonials -->
+            <!-- Pricing -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="block-title">
+                        <h3> Pricing</h3>
+                    </div>
+
+                    <div class="lm-pricing row clearfix">
+                        <div class="lm-package-wrap col-md-4 default-col">
+                            <div class="lm-package">
+                                <div class="lm-heading-row">
+                                    <span> Plan 1</span>
+                                </div>
+                                <div class="lm-pricing-row">
+                                    <span> $64</span>
+                                    <small> per month</small>
+                                </div>
+
+                                <div class="lm-button-row">
+                                    <a href="#" target="_self" class="btn btn-primary"> Free Trial</a>
+                                </div>
+                                <div class="lm-default-row">
+                                    Lorem ipsum dolor
+                                </div>
+                                <div class="lm-default-row">
+                                    Pellentesque scelerisque
+                                </div>
+                                <div class="lm-default-row">
+                                    Morbi eu sagittis
+                                </div>
+                                <div class="lm-default-row">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lm-package-wrap col-md-4 highlight-col ">
+                            <div class="lm-package">
+                                <div class="lm-heading-row">
+                                    <span> Plan 2</span>
+                                </div>
+                                <div class="lm-pricing-row">
+                                    <span> $128</span>
+                                    <small> per month</small>
+                                </div>
+
+                                <div class="lm-button-row">
+                                    <a href="#" target="_self" class="btn btn-primary"> Free Trial</a>
+                                </div>
+                                <div class="lm-default-row">
+                                    Lorem ipsum dolor
+                                </div>
+                                <div class="lm-default-row">
+                                    Pellentesque scelerisque
+                                </div>
+                                <div class="lm-default-row">
+                                    Morbi eu sagittis
+                                </div>
+                                <div class="lm-default-row">
+                                    Donec non diam
+                                </div>
+                                <div class="lm-default-row">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lm-package-wrap col-md-4 default-col ">
+                            <div class="lm-package">
+                                <div class="lm-heading-row">
+                                    <span> Plan 3</span>
+                                </div>
+
+                                <div class="lm-pricing-row">
+                                    <span> $256</span>
+                                    <small> per month</small>
+                                </div>
+
+                                <div class="lm-button-row">
+                                    <a href="#" target="_self" class="btn btn-primary"> Free Trial</a>
+                                </div>
+
+                                <div class="lm-default-row">
+                                    Lorem ipsum dolor
+                                </div>
+                                <div class="lm-default-row">
+                                    Pellentesque scelerisque
+                                </div>
+                                <div class="lm-default-row">
+                                    Morbi eu sagittis
+                                </div>
+                                <div class="lm-default-row">
+                                    Donec non diam
+                                </div>
+                                <div class="lm-default-row">
+                                    Aenean nec libero
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Pricing -->
+        </div>
+    </div>
+</section>
+<!-- End of Services Subpage -->

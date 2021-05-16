@@ -1,0 +1,92 @@
+﻿<zone name="Header" position="Header">
+    <!-- Header -->
+    <header id="site_header" class="header mobile-menu-hide">
+        <div class="header-content">
+            <div class="site-title-block mobile-hidden">
+                <div class="site-title"> Alex <span> Smith</span> </div>
+            </div>
+            <!-- Navigation -->
+            <div class="site-nav">
+                <menu alias="alias:main-menu" cache-id="main-menu2" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu2" />
+                <!-- Main menu -->
+            </div>
+            <!-- Navigation -->
+        </div>
+    </header>
+    <!-- /Header -->
+    <!-- Mobile Header -->
+    <div class="mobile-header mobile-visible">
+        <div class="mobile-logo-container">
+            <div class="mobile-site-title"> Alex Smith</div>
+        </div>
+
+        <a class="menu-toggle mobile-visible">
+            <i class="fa fa-bars"> </i>
+        </a>
+    </div>
+    <!-- /Mobile Header -->
+</zone>
+
+<!DOCTYPE html>
+<html lang="@Orchard.CultureName()" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PRO Card - Material Resume / CV / vCard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="PRO Card - Material Resume / CV / vCard Template" />
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio" />
+    <meta name="author" content="lmtheme" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style asp-name="theprocardtheme-vendor-bootstrapcss"></style>
+    <style asp-name="theprocardtheme-vendor-normalize"></style>
+    <style asp-name="theprocardtheme-vendor-animate"></style>
+    <style asp-name="theprocardtheme-vendor-transitionanimations"></style>
+    <style asp-name="theprocardtheme-vendor-owlcarousel"></style>
+    <style asp-name="theprocardtheme-vendor-magnificpopup"></style>
+    <style asp-name="TheProCardTheme-main"></style>
+
+    <script asp-name="theprocardtheme-vendor-jquery" at="Head"></script>
+    <script asp-name="theprocardtheme-vendor-modernizr" at="Head"></script>
+    <script asp-name="theprocardtheme-vendor-bootstrap" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-pages-switcher" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-imagesloaded" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-validator" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-jqueryshuffle" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-masonry" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-owlcarousel" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-magnificpopup" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-hoverdir" at="Foot"></script>
+    <script asp-name="theprocardtheme-vendor-jquerygooglemaps" at="Foot"></script>
+    <script asp-name="theprocardtheme-main" at="Foot"></script>
+    <resources Type="Meta" />
+    <resources Type="HeadLink" />
+    <resources type="Stylesheet" />
+    <resources type="HeadScript" />
+</head>
+
+<body class="material-template">
+    <!-- Loading animation -->
+    <div class="preloader">
+        <div class="preloader-animation">
+            <div class="preloader-spinner">
+            </div>
+        </div>
+    </div>
+    <!-- /Loading animation -->
+    <div id="page" class="page">
+        @await RenderSectionAsync("Header", required: false)
+        @await RenderBodyAsync()
+    </div>
+    @if (IsSectionDefined("Footer"))
+    {
+        <footer>
+            <div class="copyrights"> © 2017 All rights reserved. Material template by LMPixels</div>
+        </footer>
+    }
+    <resources Type="FootScript" />
+
+</body>
+</html>
+

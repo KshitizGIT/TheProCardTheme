@@ -1,0 +1,20 @@
+﻿@{
+    string yearString = string.Empty;
+    if (Model.ContentItem.Content.Experience.StartDate.Value != null)
+    {
+        yearString = ((DateTime)Model.ContentItem.Content.Experience.StartDate.Value).ToString("MMM yyyy");
+    }
+    if (Model.ContentItem.Content.Experience.EndDate.Value != null)
+    {
+        yearString = yearString + " - " + ((DateTime)Model.ContentItem.Content.Experience.EndDate.Value).ToString("MMM yyyy");
+    }
+    else
+        yearString = yearString + " - Current";
+
+}
+<div class="timeline-item">
+    <h4 class="item-title">@Model.ContentItem.Content.Experience.Title.Text.Value</h4>
+    <span class="item-period">@yearString</span>
+    <span class="item-small">@Model.ContentItem.Content.Experience.Company.Text.Value</span>
+    <p class="item-description">@Model.ContentItem.Content.Experience.Description.Text.Value</p>
+</div>
