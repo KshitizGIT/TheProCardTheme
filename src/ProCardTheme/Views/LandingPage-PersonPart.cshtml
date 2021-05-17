@@ -1,7 +1,9 @@
 ﻿<!-- Home Subpage -->
 @{
-    string imagePath = Model.PersonPart.Image.Paths[0];
-
+    var date = DateTime.Today - (DateTime)Model.PersonPart.DOB.Value;
+    var age = (DateTime.MinValue + date).Year - 1;
+    var availableForWork = (bool)Model.PersonPart.AvailableForWork.Value;
+    string availability = availableForWork ? "Available" : "Not Available";
 }
 <section class="pt-page" data-id="home">
     <div class="section-inner start-page-content">
@@ -9,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="photo">
-                        <img src="@Orchard.AssetUrl(imagePath)" alt="">
+                        <img asset-src="@Model.PersonPart.Image.Paths[0]" alt="@Model.PersonPart.Image.MediaTexts[0]" />
                     </div>
                 </div>
 
@@ -46,18 +48,18 @@
                         <p>@Model.PersonPart.AboutMe.Text.Value</p>
                     </div>
                     <div class="download-resume">
-                        <a href="" class="btn btn-secondary"> Download Resume</a>
+                        <a asset-href="@Model.PersonPart.CV.Paths[0]" class="btn btn-secondary"> Download Resume</a>
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <ul class="info-list">
-                        <li> <span class="title"> Age</span> <span class="value"> 29</span> </li>
+                        <li> <span class="title"> Age</span> <span class="value">@age</span> </li>
                         <li> <span class="title"> Residence</span> <span class="value"> @Model.PersonPart.Residence.Text.Value</span> </li>
                         <li> <span class="title"> Address</span> <span class="value">@Model.PersonPart.Address.Text.Value</span> </li>
-                        <li> <span class="title"> e-mail</span> <span class="value"> <a href="@Model.PersonPart.Email.Text.Value">@Model.PersonPart.Email.Text.Value</a> </span> </li>
+                        <li> <span class="title"> E-mail</span> <span class="value"> <a href="@Model.PersonPart.Email.Text.Value">@Model.PersonPart.Email.Text.Value</a> </span> </li>
                         <li> <span class="title"> Phone</span> <span class="value">@Model.PersonPart.Phone.Text.Value</span> </li>
-                        <li> <span class="title"> Freelance</span> <span class="value available"> Available</span> </li>
+                        <li> <span class="title"> Freelance</span> <span class="value @availability.ToLower()">@availability</span> </li>
                     </ul>
                 </div>
 

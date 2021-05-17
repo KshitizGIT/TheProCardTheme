@@ -1,0 +1,1689 @@
+{
+  "name": "ProCard",
+  "displayName": "ProCard Theme",
+  "description": "ProCard Theme implementation",
+  "author": "Kshitiz Shakya",
+  "website": "",
+  "version": "1",
+  "issetuprecipe": true,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "Feature",
+      "enable": [
+        "Application.Default",
+        "OrchardCore.Settings",
+        "OrchardCore.Admin",
+        "OrchardCore.Liquid",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Templates",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Resources",
+        "OrchardCore.Features",
+        "OrchardCore.Scripting",
+        "OrchardCore.Recipes",
+        "OrchardCore.Shortcodes",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Users",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Deployment",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Widgets",
+        "OrchardCore.Feeds",
+        "OrchardCore.Flows",
+        "OrchardCore.Forms",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Html",
+        "OrchardCore.Indexing",
+        "OrchardCore.Rules",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Lucene",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media",
+        "OrchardCore.Title",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Queries",
+        "OrchardCore.ReCaptcha",
+        "OrchardCore.Roles",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Themes",
+        "ProCardTheme",
+        "TheAdmin"
+      ]
+    },
+    {
+      "name": "Themes",
+      "Site": "ProCardTheme",
+      "Admin": "TheAdmin"
+    },
+    {
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": null,
+          "Description": "Always",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.JavascriptCondition, OrchardCore.Rules",
+                "Script": "true",
+                "Name": "JavascriptCondition",
+                "ConditionId": "4t85d2dm27gvfzjkwdzcjvcamc"
+              }
+            ],
+            "Name": null,
+            "ConditionId": "48wpg09xbkq2z5r8f5wr624bw3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "LayerSettings": {
+        "Zones": [
+          "Contact"
+        ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "LandingPage",
+          "DisplayName": "Landing Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Listable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LandingPage",
+              "Name": "LandingPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "ShowHomepageOption": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {},
+                "TitlePartSettings": {
+                  "RenderTitle": false
+                }
+              }
+            },
+            {
+              "PartName": "PersonPart",
+              "Name": "PersonPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Resume",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Resume",
+                  "Description": "Resume of the user.",
+                  "Position": "4"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Education",
+                    "Experience"
+                  ]
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Services",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Services",
+                  "Description": "Services provided by the user",
+                  "Position": "5"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Client",
+                    "Service",
+                    "Testimonial"
+                  ]
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Education",
+          "DisplayName": "Education",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Education",
+              "Name": "Education",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Experience",
+          "DisplayName": "Experience",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Experience",
+              "Name": "Experience",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Service",
+          "DisplayName": "Service",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Service",
+              "Name": "Service",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Client",
+          "DisplayName": "Client",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Client",
+              "Name": "Client",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Testimonial",
+          "DisplayName": "Testimonial",
+          "Settings": {
+            "ContentTypeSettings": {},
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Testimonial",
+              "Name": "Testimonial",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Container",
+          "DisplayName": "Container",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Container",
+              "Name": "Container",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "PersonPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides general information of the user"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Name",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Name",
+                  "Position": "0"
+                },
+                "TextFieldSettings": {
+                  "Hint": "Name of the person",
+                  "Required": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "DateField",
+              "Name": "DOB",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Date Of Birth",
+                  "Position": "1"
+                },
+                "DateFieldSettings": {
+                  "Hint": "Date of Birth of the Person.",
+                  "Required": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Residence",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Residence",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Address",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Address",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Email",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Email",
+                  "Editor": "Email",
+                  "Position": "4"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Phone",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Phone",
+                  "Editor": "Tel",
+                  "Position": "5"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "BooleanField",
+              "Name": "AvailableForWork",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "AvailableForWork",
+                  "Editor": "Switch",
+                  "Position": "6"
+                },
+                "BooleanFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "AboutMe",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "About Me",
+                  "Editor": "TextArea",
+                  "Position": "7"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "CV",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "CV",
+                  "Editor": "Attached"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Education",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Course",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Course",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Institution",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Institution",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Description",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Description",
+                  "Editor": "TextArea",
+                  "Position": "2"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "DateField",
+              "Name": "Date",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Date",
+                  "Position": "3"
+                },
+                "DateFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Experience",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Title",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "DateField",
+              "Name": "StartDate",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Start Date",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "DateField",
+              "Name": "EndDate",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "End Date",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Company",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Company",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Description",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Description",
+                  "Editor": "TextArea",
+                  "Position": "4"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Service",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Name",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Name",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Description",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Description",
+                  "Editor": "TextArea",
+                  "Position": "2"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Client",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Logo",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Logo",
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Website",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Website",
+                  "Editor": "Url",
+                  "Position": "1"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Testimonial",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Author",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Author",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Firm",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Firm",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Remarks",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Remarks",
+                  "Editor": "TextArea",
+                  "Position": "3"
+                },
+                "TextFieldSettings": {},
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "data": [
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "LandingPage",
+          "DisplayText": "Default Landing Page",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "LandingPage": {},
+          "AutoroutePart": {
+            "Path": "default-landing-page",
+            "SetHomepage": true,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "TitlePart": {
+            "Title": "Default Landing Page"
+          },
+          "PersonPart": {
+            "Name": {
+              "Text": "Alex Smith"
+            },
+            "DOB": {
+              "Value": "1992-04-01T00:00:00Z"
+            },
+            "Residence": {
+              "Text": "USA"
+            },
+            "Address": {
+              "Text": " Los Angeles, USA"
+            },
+            "Email": {
+              "Text": "example@example.com"
+            },
+            "Phone": {
+              "Text": "+0123 123 456 789"
+            },
+            "AvailableForWork": {
+              "Value": true
+            },
+            "AboutMe": {
+              "Text": "Hello! I’m Alex Smith. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum ullamcorper sem, at placerat dolor volutpat ac. Duis nulla enim, condimentum nec ultricies."
+            },
+            "Image": {
+              "Paths": [
+                "photo.png"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "CV": {
+              "Paths": [
+                "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            }
+          },
+          "Resume": {
+            "ContentItems": [
+              {
+                "ContentItemId": "45v14enbss0mp41pgq106y2kw8",
+                "ContentItemVersionId": null,
+                "ContentType": "Education",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9262236Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Education": {
+                  "Course": {
+                    "Text": "Specialization Course"
+                  },
+                  "Institution": {
+                    "Text": "Apple Inc."
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  },
+                  "Date": {
+                    "Value": "2010-01-01T00:00:00Z"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4f14wp6qx4kx17f4shhavd8txv",
+                "ContentItemVersionId": null,
+                "ContentType": "Education",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9330073Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Education": {
+                  "Course": {
+                    "Text": "Specialization Course"
+                  },
+                  "Institution": {
+                    "Text": "Apple Inc."
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  },
+                  "Date": {
+                    "Value": "2010-01-01T00:00:00Z"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4etn5hs3gj65rtyrqcfcd5w3n0",
+                "ContentItemVersionId": null,
+                "ContentType": "Education",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9351076Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Education": {
+                  "Course": {
+                    "Text": "Specialization Course"
+                  },
+                  "Institution": {
+                    "Text": "Apple Inc."
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  },
+                  "Date": {
+                    "Value": "2010-01-01T00:00:00Z"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "45atgtz0m68rn7aws4nk4hkc5s",
+                "ContentItemVersionId": null,
+                "ContentType": "Experience",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9431703Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Experience": {
+                  "Title": {
+                    "Text": "Frontend-developer"
+                  },
+                  "StartDate": {
+                    "Value": "2012-12-01T00:00:00Z"
+                  },
+                  "EndDate": {
+                    "Value": null
+                  },
+                  "Company": {
+                    "Text": "Web Agency"
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4wnq3py0h4yz6xa4wwkaxxc8w7",
+                "ContentItemVersionId": null,
+                "ContentType": "Experience",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9473837Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Experience": {
+                  "Title": {
+                    "Text": "Web Designer"
+                  },
+                  "StartDate": {
+                    "Value": "2011-12-01T00:00:00Z"
+                  },
+                  "EndDate": {
+                    "Value": "2012-11-01T00:00:00Z"
+                  },
+                  "Company": {
+                    "Text": "Apple Inc."
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4vc50c656p8112q4jzn4fwd35k",
+                "ContentItemVersionId": null,
+                "ContentType": "Experience",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9500753Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Experience": {
+                  "Title": {
+                    "Text": "Graphic Designer"
+                  },
+                  "StartDate": {
+                    "Value": "2010-01-01T00:00:00Z"
+                  },
+                  "EndDate": {
+                    "Value": "2011-12-01T00:00:00Z"
+                  },
+                  "Company": {
+                    "Text": "Apple Inc."
+                  },
+                  "Description": {
+                    "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
+                  }
+                }
+              }
+            ]
+          },
+          "Services": {
+            "ContentItems": [
+              {
+                "ContentItemId": "4y78zvjmp6hac25h0w1w74rz43",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9534486Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Service": {
+                  "Name": {
+                    "Text": "Web Design"
+                  },
+                  "Description": {
+                    "Text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+                  },
+                  "Image": {
+                    "Paths": [
+                      "web_design_icon.png"
+                    ],
+                    "MediaTexts": [
+                      "Responsive Design"
+                    ]
+                  }
+                }
+              },
+              {
+                "ContentItemId": "41f3kdbhz476jyq6q5cd8rmenp",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.95536Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Service": {
+                  "Name": {
+                    "Text": "Photography"
+                  },
+                  "Description": {
+                    "Text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+                  },
+                  "Image": {
+                    "Paths": [
+                      "photography_icon.png"
+                    ],
+                    "MediaTexts": [
+                      "Photography"
+                    ]
+                  }
+                }
+              },
+              {
+                "ContentItemId": "45atxkpch2dfhsz5w1r90cg5xa",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9571194Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Service": {
+                  "Name": {
+                    "Text": "Management"
+                  },
+                  "Description": {
+                    "Text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+                  },
+                  "Image": {
+                    "Paths": [
+                      "creativity_icon.png"
+                    ],
+                    "MediaTexts": [
+                      "Creativity"
+                    ]
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4k06bff61vgdhyjyaqwt5s6gmz",
+                "ContentItemVersionId": null,
+                "ContentType": "Service",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9590253Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Service": {
+                  "Name": {
+                    "Text": "Advertisement"
+                  },
+                  "Description": {
+                    "Text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+                  },
+                  "Image": {
+                    "Paths": [
+                      "advetising_icon.png"
+                    ],
+                    "MediaTexts": [
+                      "Advertising"
+                    ]
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4xe98h7v5besv26x6hfj2qd858",
+                "ContentItemVersionId": null,
+                "ContentType": "Client",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9607567Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Client": {
+                  "Logo": {
+                    "Paths": [
+                      "client_1.png"
+                    ],
+                    "MediaTexts": [
+                      "image"
+                    ]
+                  },
+                  "Website": {
+                    "Text": "https://example.com"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4kvw839qebzfj06dgap56jgy40",
+                "ContentItemVersionId": null,
+                "ContentType": "Testimonial",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9638372Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Testimonial": {
+                  "Image": {
+                    "Paths": [
+                      "testimonial_photo_1.jpg"
+                    ],
+                    "MediaTexts": [
+                      ""
+                    ]
+                  },
+                  "Author": {
+                    "Text": "Maria Richardson"
+                  },
+                  "Firm": {
+                    "Text": "Lindsey's Lumber"
+                  },
+                  "Remarks": {
+                    "Text": "Phasellus eu nunc tincidunt, ultricies elit vitae, pretium eros. Sed sed ipsum sed massa."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4pezcwt1419tp15ja5yrb2znxe",
+                "ContentItemVersionId": null,
+                "ContentType": "Testimonial",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9677185Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Testimonial": {
+                  "Image": {
+                    "Paths": [
+                      "testimonial_photo_1.jpg"
+                    ],
+                    "MediaTexts": [
+                      ""
+                    ]
+                  },
+                  "Author": {
+                    "Text": "John Doe"
+                  },
+                  "Firm": {
+                    "Text": "Apple Inc."
+                  },
+                  "Remarks": {
+                    "Text": "Vivamus porta dapibus tristique. Suspendisse et arcu eget nisi convallis eleifend nec ac lorem."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4wqqnw9gmndaazemctm7yt33x4",
+                "ContentItemVersionId": null,
+                "ContentType": "Testimonial",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.970364Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Testimonial": {
+                  "Image": {
+                    "Paths": [
+                      "testimonial_photo_1.jpg"
+                    ],
+                    "MediaTexts": [
+                      ""
+                    ]
+                  },
+                  "Author": {
+                    "Text": "George McQueen"
+                  },
+                  "Firm": {
+                    "Text": "Harmony House"
+                  },
+                  "Remarks": {
+                    "Text": "Aliquam congue auctor lectus sed fermentum. Nulla ultricies tellus quis sapien lacinia egestas."
+                  }
+                }
+              }
+            ]
+          },
+          "Portfolio": {
+            "ContentItems": [
+              {
+                "ContentItemId": "4zdmsc1b0qv192ma4cj3e809xm",
+                "ContentItemVersionId": null,
+                "ContentType": "Project",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T05:11:21.9756412Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Project": {
+                  "Image": {
+                    "Paths": [
+                      "1.jpg"
+                    ],
+                    "MediaTexts": [
+                      ""
+                    ]
+                  },
+                  "Name": {
+                    "Text": "Project Name"
+                  },
+                  "Group": {
+                    "Text": "Media"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4ghbrt07r5sx5zh0drbsr3cbcb",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Home",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:22:35.7784741Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Home",
+                  "Url": "~/#home"
+                },
+                "LinkMenuItem": {},
+                "MenuItemsListPart": {
+                  "MenuItems": []
+                }
+              },
+              {
+                "ContentItemId": "46s6k0je7xfkq4dcsgmkmeb9xa",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Resume",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:22:56.1440745Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Resume",
+                  "Url": "~/#resume"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4gc89pqmr9kqdv0yjaz039vbc2",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Services",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:23:33.9278759Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Services",
+                  "Url": "~/#services"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "48180893d4m34tekpj8vmcgs5v",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:24:25.1880368Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Contact",
+                  "Url": "~/#contact"
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Form",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": null
+          },
+          "FormElementPart": {
+            "Id": "contact-form"
+          },
+          "FormPart": {
+            "EnableAntiForgeryToken": true,
+            "Action": null,
+            "Method": "POST",
+            "WorkflowTypeId": null,
+            "EncType": "application/x-www-form-urlencoded"
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4wstk4s6ffj99zyqpb99w9c14z",
+                "ContentItemVersionId": null,
+                "ContentType": "ValidationSummary",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T07:30:45.7072321Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "ValidationSummaryPart": {},
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              },
+              {
+                "ContentItemId": "4cq850aaszbem624mnr4za7dm0",
+                "ContentItemVersionId": null,
+                "ContentType": "Container",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-17T07:30:45.7080868Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "Kshitiz",
+                "Container": {},
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "ContentItemId": "4yvpaeh8kee2r5swmy8z1ge9n7",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "DisplayText": "name",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.7089176Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": "",
+                      "Author": "Kshitiz",
+                      "FormInputElementPart": {
+                        "Name": "name"
+                      },
+                      "FormElementPart": {
+                        "Id": "form_name"
+                      },
+                      "InputPart": {
+                        "Type": "text",
+                        "DefaultValue": null,
+                        "Placeholder": "Full Name"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "4x8cq5k5qyea23p2htk98pmkx5",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "DisplayText": "Email",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.709861Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": "",
+                      "Author": "Kshitiz",
+                      "FormInputElementPart": {
+                        "Name": "Email"
+                      },
+                      "FormElementPart": {
+                        "Id": "form_email"
+                      },
+                      "InputPart": {
+                        "Type": "email",
+                        "DefaultValue": null,
+                        "Placeholder": "Email Address"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "46y0jzp3w67gmrrzt2c2wafkxt",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Input",
+                      "DisplayText": "subject",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.7105844Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "Kshitiz",
+                      "FormInputElementPart": {
+                        "Name": "subject"
+                      },
+                      "FormElementPart": {
+                        "Id": null
+                      },
+                      "InputPart": {
+                        "Type": "text",
+                        "DefaultValue": null,
+                        "Placeholder": "Subject"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "4ybbtb5966bc9vn83wnsq887ct",
+                      "ContentItemVersionId": null,
+                      "ContentType": "TextArea",
+                      "DisplayText": "form_message",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.7113214Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": "",
+                      "Author": "Kshitiz",
+                      "FormInputElementPart": {
+                        "Name": "form_message"
+                      },
+                      "FormElementPart": {
+                        "Id": "message"
+                      },
+                      "TextAreaPart": {
+                        "DefaultValue": null,
+                        "Placeholder": "Please, leave me a message."
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "4fz6csa8hqytn15wveh5q1x1mc",
+                      "ContentItemVersionId": null,
+                      "ContentType": "ReCaptcha",
+                      "DisplayText": "",
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.7121756Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": "",
+                      "Author": "Kshitiz",
+                      "ReCaptchaPart": {},
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "4cxaqhde0bckm0827b4xve2jww",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Button",
+                      "DisplayText": null,
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2021-05-17T07:30:45.7130932Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": "",
+                      "Author": "Kshitiz",
+                      "FormInputElementPart": {
+                        "Name": null
+                      },
+                      "FormElementPart": {
+                        "Id": null
+                      },
+                      "ButtonPart": {
+                        "Text": "Send Message",
+                        "Type": "submit"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    }
+                  ]
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "LayerMetadata": {
+            "Position": 1.0,
+            "Zone": "Contact",
+            "Layer": "Always",
+            "RenderTitle": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "SourcePath": "1.jpg",
+          "TargetPath": "1.jpg"
+        },
+        {
+          "SourcePath": "advetising_icon.png",
+          "TargetPath": "advetising_icon.png"
+        },
+        {
+          "SourcePath": "client_1.png",
+          "TargetPath": "client_1.png"
+        },
+        {
+          "SourcePath": "creativity_icon.png",
+          "TargetPath": "creativity_icon.png"
+        },
+        {
+          "SourcePath": "photo.png",
+          "TargetPath": "photo.png"
+        },
+        {
+          "SourcePath": "photography_icon.png",
+          "TargetPath": "photography_icon.png"
+        },
+        {
+          "SourcePath": "testimonial_photo_1.jpg",
+          "TargetPath": "testimonial_photo_1.jpg"
+        },
+        {
+          "SourcePath": "web_design_icon.png",
+          "TargetPath": "web_design_icon.png"
+        },
+        {
+          "SourcePath": "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf",
+          "TargetPath": "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf"
+        }
+      ]
+    },
+    {
+      "name": "deployment",
+      "Plans": [
+        {
+          "Name": "Recipes",
+          "Steps": [
+            {
+              "Type": "RecipeFileDeploymentStep",
+              "Step": {
+                "RecipeName": "ProCard",
+                "DisplayName": "ProCard Theme",
+                "Description": "ProCard Theme implementation",
+                "Author": "Kshitiz Shakya",
+                "WebSite": null,
+                "Version": "1",
+                "IsSetupRecipe": true,
+                "Categories": null,
+                "Tags": null,
+                "Id": "39b4c90a253345f3b5a7e2234fdda328",
+                "Name": "RecipeFileDeploymentStep"
+              }
+            },
+            {
+              "Type": "AllFeaturesDeploymentStep",
+              "Step": {
+                "IgnoreDisabledFeatures": true,
+                "Id": "82f16d7a2cfb434ea2f2e4cbfc1266c4",
+                "Name": "AllFeatures"
+              }
+            },
+            {
+              "Type": "ThemesDeploymentStep",
+              "Step": {
+                "Id": "590f7e1b097c4a58969a1a9ffd034bb8",
+                "Name": "Themes"
+              }
+            },
+            {
+              "Type": "AllLayersDeploymentStep",
+              "Step": {
+                "Id": "9d3a7c55fa314c609abdcabe5703a61b",
+                "Name": "AllLayers"
+              }
+            },
+            {
+              "Type": "ContentDefinitionDeploymentStep",
+              "Step": {
+                "IncludeAll": false,
+                "ContentTypes": [
+                  "Client",
+                  "Container",
+                  "Education",
+                  "Experience",
+                  "LandingPage",
+                  "Service",
+                  "Testimonial"
+                ],
+                "ContentParts": [
+                  "Client",
+                  "Container",
+                  "Education",
+                  "Experience",
+                  "LandingPage",
+                  "Service",
+                  "Testimonial",
+                  "PersonPart"
+                ],
+                "Id": "b335e2927fad4b6db6946bbcea0be9ff",
+                "Name": "ContentDefinition"
+              }
+            },
+            {
+              "Type": "AllContentDeploymentStep",
+              "Step": {
+                "ExportAsSetupRecipe": true,
+                "Id": "4dbfaa147ddd446d8edcfb0dcab139af",
+                "Name": "AllContent"
+              }
+            },
+            {
+              "Type": "MediaDeploymentStep",
+              "Step": {
+                "IncludeAll": true,
+                "FilePaths": [],
+                "DirectoryPaths": [],
+                "Id": "9e6cd72099294c87bfda28e878f01062",
+                "Name": "Media"
+              }
+            },
+            {
+              "Type": "DeploymentPlanDeploymentStep",
+              "Step": {
+                "IncludeAll": true,
+                "DeploymentPlanNames": [],
+                "Id": "54bc69ddb5754944ab43e1293a1713f3",
+                "Name": "DeploymentPlan"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

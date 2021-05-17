@@ -1,9 +1,17 @@
-﻿<zone name="Header" position="Header">
+﻿
+@{
+    var personPart = await @Orchard.GetContentItemByHandleAsync("slug:default-landing-page");
+    string fullName = personPart.ContentItem.Content.PersonPart.Name.Text.Value.ToString();
+    var nameParts = fullName.Split(" ", StringSplitOptions.TrimEntries);
+    var firstName = nameParts.First();
+    var lastName = nameParts.Last();
+}
+<zone name="Header" position="Header">
     <!-- Header -->
     <header id="site_header" class="header mobile-menu-hide">
         <div class="header-content">
             <div class="site-title-block mobile-hidden">
-                <div class="site-title"> Alex <span> Smith</span> </div>
+                <div class="site-title"> @firstName <span> @lastName</span> </div>
             </div>
             <!-- Navigation -->
             <div class="site-nav">
@@ -17,7 +25,7 @@
     <!-- Mobile Header -->
     <div class="mobile-header mobile-visible">
         <div class="mobile-logo-container">
-            <div class="mobile-site-title"> Alex Smith</div>
+            <div class="mobile-site-title">@fullName</div>
         </div>
 
         <a class="menu-toggle mobile-visible">
