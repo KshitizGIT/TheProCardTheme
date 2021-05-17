@@ -5,12 +5,24 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+env:
+    DOTNET_NOLOGO: true
+    DOTNET_CLI_TELEMETRY_OPTOUT: true
+    PROJECT_NAME: ProCardTheme
+    # GitHub Packages Feed settings
+    GITHUB_FEED: https://nuget.pkg.github.com/KshitizGIT/
+    GITHUB_USER: KshitizGIT
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # Official NuGet Feed settings
+    NUGET_FEED: https://api.nuget.org/v3/index.json
+    NUGET_KEY: ${{ secrets.NUGET_KEY }}
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: ['ubuntu-latest, windows-latest, macos-latest']
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -26,3 +38,6 @@ jobs:
     - name: Test
       working-directory: ./src/ProCardTheme
       run: dotnet test --no-build --verbosity normal
+    - name: Pack
+      if: matrix.os == 'ubuntu-latest'
+      run: dotnet pack -c Release -v normal --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID src/$PROJECT_NAME/$PROJECT_NAME.csproj
