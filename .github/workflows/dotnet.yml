@@ -17,11 +17,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Change directory to ProCard
-      run: cd src/ProCardTheme/
     - name: Restore dependencies
+      working-directory: ./src/ProCardTheme
       run: dotnet restore
     - name: Build
+      working-directory: ./src/ProCardTheme
       run: dotnet build -c Release --no-restore
     - name: Test
+      working-directory: ./src/ProCardTheme
       run: dotnet test --no-build --verbosity normal
