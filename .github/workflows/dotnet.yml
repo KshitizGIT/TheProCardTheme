@@ -38,20 +38,25 @@ jobs:
     - name: Test
       working-directory: ./src/ProCardTheme
       run: dotnet test --no-build --verbosity normal
+
+    - name: Dev Pack
+      if: github.ref == 'refs/heads/dev'
+      run: dotnet pack -c Release -v normal -p:PackageVersion=$GITHUB_RUN_ID src/$PROJECT_NAME/$PROJECT_NAME.csproj
+
+    - name: Prod Pack
+      if: github.ref == 'refs/heads/main'
+      run: dotnet pack -c Release -v normal src/$PROJECT_NAME/$PROJECT_NAME.csproj
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: nupkg
+        path: ./src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg
   prelease:
       needs: build
       if: github.ref == 'refs/heads/dev'
       runs-on: ubuntu-latest
       steps:
-          - name: Pack
-            run: dotnet pack -c Release -v normal -p:PackageVersion=$GITHUB_RUN_ID src/$PROJECT_NAME/$PROJECT_NAME.csproj
-
-          - name: Upload Artifact
-            uses: actions/upload-artifact@v2
-            with:
-                name: nupkg
-                path: ./src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg
-
           - name: Download Artifact
             uses: actions/download-artifact@v2
             with:
@@ -68,15 +73,6 @@ jobs:
       if: github.ref == 'refs/heads/main'
       runs-on: ubuntu-latest
       steps:
-          - name: Pack
-            run: dotnet pack -c Release -v normal src/$PROJECT_NAME/$PROJECT_NAME.csproj
-
-          - name: Upload Artifact
-            uses: actions/upload-artifact@v2
-            with:
-                name: nupkg
-                path: ./src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg
-        
           - name: Download Artifact
             uses: actions/download-artifact@v2
             with:
