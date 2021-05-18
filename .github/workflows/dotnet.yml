@@ -48,6 +48,7 @@ jobs:
       run: dotnet pack -c Release -v normal src/$PROJECT_NAME/$PROJECT_NAME.csproj
 
     - name: Upload Artifact
+      if: matrix.os == 'ubuntu-latest'
       uses: actions/upload-artifact@v2
       with:
         name: nupkg
