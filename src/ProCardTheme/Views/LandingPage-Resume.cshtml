@@ -40,61 +40,34 @@
                 </div>
             </div>
 
+            @{
+                var skills = Model.ContentItems.Where(c => c.ContentType == "Skill")
+                        .GroupBy(c => c.ContentItem.Content.Skill.Type.Text.Value);
+            }
             <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="block">
-                        <div class="block-title">
-                            <h3> Design <span> Skills</span> </h3>
-                        </div>
-
-                        <div class="skills-info">
-                            <h4> Web Design</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-1"> </div>
+                @foreach (var skill in skills)
+                {
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="block">
+                            <div class="block-title">
+                                <h3> @skill.Key <span> Skills</span> </h3>
                             </div>
 
-                            <h4> Graphic Design</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-2"> </div>
-                            </div>
-
-                            <h4> Print Design</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-3"> </div>
+                            <div class="skills-info">
+                                @foreach (var s in skill)
+                                {
+                                    <h4>@s.ContentItem.Content.Skill.Name.Text.Value</h4>
+                                    <div class="skill-container">
+                                        <div class="skill-percentage skill-@s.ContentItem.Content.Skill.Proficiency.Value"> </div>
+                                    </div>
+                                }
                             </div>
                         </div>
-
                     </div>
-                </div>
-
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="block">
-                        <div class="block-title">
-                            <h3> Coding <span> Skills</span> </h3>
-                        </div>
-
-                        <div class="skills-info">
-                            <h4> HTML5</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-4"> </div>
-                            </div>
-
-                            <h4> CSS3/LESS/SASS</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-5"> </div>
-                            </div>
-
-                            <h4> jQuery</h4>
-                            <div class="skill-container">
-                                <div class="skill-percentage skill-6"> </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                }
             </div>
             <!-- Download Resume Button -->
-            @{ 
+            @{
                 var contentItem = await @Orchard.GetContentItemByHandleAsync("slug:default-landing-page");
 
             }

@@ -165,7 +165,8 @@
                 "BagPartSettings": {
                   "ContainedContentTypes": [
                     "Education",
-                    "Experience"
+                    "Experience",
+                    "Skill"
                   ]
                 },
                 "ContentIndexSettings": {}
@@ -751,7 +752,7 @@
             },
             "CV": {
               "Paths": [
-                "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf"
+                "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf"
               ],
               "MediaTexts": [
                 ""
@@ -767,7 +768,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9262236Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.3790716Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -794,7 +795,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9330073Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.3847508Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -821,7 +822,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9351076Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.3871627Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -848,7 +849,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9431703Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.389053Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -878,7 +879,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9473837Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.3911506Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -908,7 +909,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9500753Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.3932354Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -930,6 +931,150 @@
                     "Text": "Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor."
                   }
                 }
+              },
+              {
+                "ContentItemId": "4dsgj9qe6sm8q094mz5z6yxgww",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.3953541Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "Web Design"
+                  },
+                  "Proficiency": {
+                    "Value": 9.0
+                  },
+                  "Type": {
+                    "Text": "Design Skills"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4b5n5qky39r1cxztd6yjtb4fne",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.4009421Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "Graphic Design"
+                  },
+                  "Proficiency": {
+                    "Value": 8.0
+                  },
+                  "Type": {
+                    "Text": "Design Skills"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4174ba9z3dspn78cnq9nae9y5j",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.4024884Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "Print Design"
+                  },
+                  "Proficiency": {
+                    "Value": 7.0
+                  },
+                  "Type": {
+                    "Text": "Design Skills"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "41w53vpbq0zxs3as5nkbggprmb",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.4040084Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "jQuery"
+                  },
+                  "Proficiency": {
+                    "Value": 6.0
+                  },
+                  "Type": {
+                    "Text": "Coding Skills"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4pssy0fvvztv54myt3rgnbx6d3",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.4054534Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "HTML5"
+                  },
+                  "Proficiency": {
+                    "Value": 7.0
+                  },
+                  "Type": {
+                    "Text": "Coding Skills"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "4ap61kys8vfk6rjv1jhqjy7wce",
+                "ContentItemVersionId": null,
+                "ContentType": "Skill",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T03:57:02.4069096Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "Skill": {
+                  "Name": {
+                    "Text": "CSS3/LESS/SASS"
+                  },
+                  "Proficiency": {
+                    "Value": 6.0
+                  },
+                  "Type": {
+                    "Text": "Coding Skills"
+                  }
+                }
               }
             ]
           },
@@ -942,7 +1087,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9534486Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4091239Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -971,7 +1116,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.95536Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4109645Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1000,7 +1145,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9571194Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4127224Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1029,7 +1174,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9590253Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4145219Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1058,7 +1203,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9607567Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4169882Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1084,7 +1229,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9638372Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4188295Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1116,7 +1261,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.9677185Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4212524Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1148,7 +1293,7 @@
                 "DisplayText": "",
                 "Latest": false,
                 "Published": false,
-                "ModifiedUtc": "2021-05-17T05:11:21.970364Z",
+                "ModifiedUtc": "2021-05-18T03:57:02.4235051Z",
                 "PublishedUtc": null,
                 "CreatedUtc": null,
                 "Owner": "",
@@ -1578,8 +1723,8 @@
           "TargetPath": "web_design_icon.png"
         },
         {
-          "SourcePath": "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf",
-          "TargetPath": "mediafields/LandingPage/49p3rwp311145568d23dwphhcp/de7869459f7187bb99f79d684d6916c3.pdf"
+          "SourcePath": "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf",
+          "TargetPath": "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf"
         }
       ]
     },
