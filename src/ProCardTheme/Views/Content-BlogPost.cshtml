@@ -1,0 +1,34 @@
+﻿<div id="main" class="site-main">
+    <!-- Single Page Content -->
+    <div class="single-page-content">
+        <div class="content-area">
+            <div class="page-content">
+                <!-- Blog Entry Content -->
+                <div class="blog-post-main-image">
+                    <img class="post-image img-responsive" asset-src="@Model.ContentItem.Content.BlogPost.CoverPic.Paths[0]" alt="@Model.ContentItem.Content.BlogPost.CoverPic.MediaTexts[0]" />
+                </div>
+
+                <div class="blog-post-content">
+                    <h1>@Model.ContentItem.DisplayText</h1>
+
+                    <div class="entry-meta">
+                        <span class="date"><a href="#">@Model.ContentItem.PublishedUtc</a></span>
+                        <span class="divider">|</span>
+                        <span class="autor"><a href="#">@Model.ContentItem.Author</a></span>
+                        <span class="divider">|</span>
+                        <span class="category"><a href="#"><i class="fa fa-fw fa-folder"></i> jQuery</a></span>
+                    </div>
+
+                    @{ 
+                        Model.Content.Remove("TitlePart"); 
+                        Model.Content.Remove("BlogPost-CoverPic"); 
+                        }
+                    @await DisplayAsync(Model.Content)
+                </div>
+                <!-- End of Blog Entry Content -->
+            </div>
+        </div>
+    </div>
+    <!-- End of Single Page Content -->
+</div>
+<!-- /Main Content -->

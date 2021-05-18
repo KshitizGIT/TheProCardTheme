@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     var personPart = await @Orchard.GetContentItemByHandleAsync("slug:default-landing-page");
     string fullName = personPart.ContentItem.Content.PersonPart.Name.Text.Value.ToString();
     var nameParts = fullName.Split(" ", StringSplitOptions.TrimEntries);

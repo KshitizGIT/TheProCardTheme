@@ -1,0 +1,19 @@
+﻿<!-- Blog Post 1 -->
+<div class="item">
+    <div class="blog-card">
+        <div class="media-block">
+            <a href="@Model.ContentItem.Content.AutoroutePart.Path.Value">
+                <img class="post-image img-responsive" asset-src="@Model.ContentItem.Content.BlogPost.CoverPic.Paths[0]" alt="@Model.ContentItem.Content.BlogPost.CoverPic.MediaTexts[0]" />
+                <div class="mask"> </div>
+                <div class="post-date"> <span class="day"> 6</span> <span class="month"> Dec</span><!-- <span class="year" > 2016</span >--> </div>
+            </a>
+        </div>
+        <div class="post-info">
+            <ul class="category">
+                <li> @*<a href="#"> Travel</a>*@ </li>
+            </ul>
+            <a href="@Model.ContentItem.Content.AutoroutePart.Path.Value"> <h4 class="blog-item-title">@Model.ContentItem.DisplayText </a>
+        </div>
+    </div>
+</div>
+<!-- End of Blog Post 1 -->

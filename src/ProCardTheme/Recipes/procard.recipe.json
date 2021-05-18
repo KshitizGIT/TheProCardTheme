@@ -3,11 +3,14 @@
   "displayName": "ProCard Theme",
   "description": "ProCard Theme implementation",
   "author": "Kshitiz Shakya",
-  "website": "",
+  "website": "https://github.com/KshitizGIT/TheProCardTheme",
   "version": "1.0.0-rc2",
   "issetuprecipe": true,
   "categories": [],
   "tags": [],
+  "variables": {
+    "blogContentItemId": "[js:uuid()]"
+  },
   "steps": [
     {
       "name": "Feature",
@@ -98,6 +101,140 @@
     {
       "name": "ContentDefinition",
       "ContentTypes": [
+        {
+          "Name": "BlogPost",
+          "DisplayName": "Blog Post",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | container | display_text | slugify }}/{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": false
+                }
+              }
+            },
+            {
+              "PartName": "BlogPost",
+              "Name": "BlogPost",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3",
+                  "Editor": "Wysiwyg"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Blog",
+          "DisplayName": "Blog",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Listable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "Blog",
+              "Name": "Blog",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                },
+                "ListPartSettings": {
+                  "PageSize": 10,
+                  "ContainedContentTypes": [
+                    "BlogPost"
+                  ]
+                }
+              }
+            }
+          ]
+        },
         {
           "Name": "LandingPage",
           "DisplayName": "Landing Page",
@@ -313,6 +450,27 @@
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Skill",
+          "DisplayName": "Skill",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Listable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Skill",
+              "Name": "Skill",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
                 }
               }
             }
@@ -692,6 +850,86 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Skill",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Name",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Name",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "NumericField",
+              "Name": "Proficiency",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Proficiency",
+                  "Editor": "Range",
+                  "Position": "1"
+                },
+                "NumericFieldSettings": {
+                  "Scale": 1,
+                  "Minimum": 1.0,
+                  "Maximum": 10.0,
+                  "DefaultValue": "5"
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Type",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Type",
+                  "Editor": "PredefinedList",
+                  "Position": "2"
+                },
+                "TextFieldSettings": {},
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Design",
+                      "value": "Design"
+                    },
+                    {
+                      "name": "Coding",
+                      "value": "Coding"
+                    }
+                  ],
+                  "Editor": 1
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "BlogPost",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "CoverPic",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Cover Pic",
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {
+                  "Multiple": false
+                }
+              }
+            }
+          ]
         }
       ]
     },
@@ -752,7 +990,7 @@
             },
             "CV": {
               "Paths": [
-                "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf"
+                "mediafields/LandingPage/Documents/Sample.pdf"
               ],
               "MediaTexts": [
                 ""
@@ -1356,109 +1594,6 @@
         },
         {
           "ContentItemId": "[js: uuid()]",
-          "ContentType": "Menu",
-          "DisplayText": "Main Menu",
-          "Latest": true,
-          "Published": true,
-          "Owner": "[js: parameters('AdminUserId')]",
-          "Author": "[js: parameters('AdminUsername')]",
-          "TitlePart": {
-            "Title": "Main Menu"
-          },
-          "AliasPart": {
-            "Alias": "main-menu"
-          },
-          "MenuPart": {},
-          "MenuItemsListPart": {
-            "MenuItems": [
-              {
-                "ContentItemId": "4ghbrt07r5sx5zh0drbsr3cbcb",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Home",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2021-05-16T08:22:35.7784741Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "Kshitiz",
-                "LinkMenuItemPart": {
-                  "Name": "Home",
-                  "Url": "~/#home"
-                },
-                "LinkMenuItem": {},
-                "MenuItemsListPart": {
-                  "MenuItems": []
-                }
-              },
-              {
-                "ContentItemId": "46s6k0je7xfkq4dcsgmkmeb9xa",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Resume",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2021-05-16T08:22:56.1440745Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "Kshitiz",
-                "LinkMenuItemPart": {
-                  "Name": "Resume",
-                  "Url": "~/#resume"
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4gc89pqmr9kqdv0yjaz039vbc2",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Services",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2021-05-16T08:23:33.9278759Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "Kshitiz",
-                "LinkMenuItemPart": {
-                  "Name": "Services",
-                  "Url": "~/#services"
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "48180893d4m34tekpj8vmcgs5v",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Contact",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2021-05-16T08:24:25.1880368Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "Kshitiz",
-                "LinkMenuItemPart": {
-                  "Name": "Contact",
-                  "Url": "~/#contact"
-                },
-                "LinkMenuItem": {}
-              }
-            ]
-          },
-          "@WeldedPartSettings": {
-            "MenuPart": {
-              "Position": "3"
-            },
-            "MenuItemsListPart": {
-              "Position": "4"
-            }
-          }
-        },
-        {
-          "ContentItemId": "[js: uuid()]",
           "ContentType": "Form",
           "DisplayText": null,
           "Latest": true,
@@ -1684,6 +1819,190 @@
             "Layer": "Always",
             "RenderTitle": false
           }
+        },
+        {
+          "ContentItemId": "[js: variables('blogContentItemId')]",
+          "ContentType": "Blog",
+          "DisplayText": "Default Blog",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Default Blog"
+          },
+          "AutoroutePart": {
+            "Path": "blogs",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "Blog": {},
+          "HtmlBodyPart": {
+            "Html": ""
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4ghbrt07r5sx5zh0drbsr3cbcb",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Home",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:22:35.7784741Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Home",
+                  "Url": "/#home"
+                },
+                "LinkMenuItem": {},
+                "MenuItemsListPart": {
+                  "MenuItems": []
+                }
+              },
+              {
+                "ContentItemId": "46s6k0je7xfkq4dcsgmkmeb9xa",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Resume",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:22:56.1440745Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Resume",
+                  "Url": "/#resume"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4gc89pqmr9kqdv0yjaz039vbc2",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Services",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:23:33.9278759Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Services",
+                  "Url": "/#services"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4egzdq7temys50v8k1p3j3ax5a",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Blog",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-18T13:12:22.2841844Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Blog",
+                  "Url": "/#blog"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "48180893d4m34tekpj8vmcgs5v",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2021-05-16T08:24:25.1880368Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "Kshitiz",
+                "LinkMenuItemPart": {
+                  "Name": "Contact",
+                  "Url": "/#contact"
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Bootstrap is the Most Popular HTML, CSS, and JS Framework",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUserId')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Bootstrap is the Most Popular HTML, CSS, and JS Framework"
+          },
+          "AutoroutePart": {
+            "Path": "blogs/bootstrap-is-the-most-popular-html-css-and-js-framework",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "BlogPost": {
+            "CoverPic": {
+              "Paths": [
+                "blog_post_1_full.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a fringilla elit, eu mattis arcu. Curabitur augue augue, scelerisque sit amet varius eget, tristique at nisl. In euismod suscipit tristique. Nulla sollicitudin pretium massa sit amet tristique.\r\n\r\nAenean porta quam quis tempus posuere. Integer tempor, elit in auctor scelerisque, arcu augue rhoncus mauris, et hendrerit sem tellus vitae eros. Nulla feugiat ultrices posuere. Nullam aliquet dolor orci. Curabitur tincidunt sem et libero dignissim, sed molestie felis ultricies. Phasellus malesuada tellus vitae eros bibendum, nec ultricies massa sollicitudin. Etiam justo neque, faucibus quis urna interdum, interdum rutrum massa. Mauris et velit ac dolor luctus fringilla. Integer in mattis dui, eget eleifend mauris. Fusce sagittis ipsum nec est finibus, vitae congue nunc elementum. Morbi imperdiet nisl sem, at commodo leo posuere a. Maecenas eu laoreet lorem. Aenean fringilla cursus augue, sed mollis dui.\r\n\r\n> Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition.\r\n- Steve Jobs\r\n\r\nPraesent ac quam sed magna gravida interdum. Vivamus sed nunc lobortis, tempor ante ut, gravida nibh. Praesent sed euismod odio. Maecenas dui dui, euismod quis lobortis quis, dignissim ut eros. Curabitur cursus lacinia sollicitudin. Aenean vitae erat imperdiet, egestas nisi non, placerat sapien. In nec commodo justo. Nunc posuere lacinia neque eu malesuada. Sed lacus lacus, tincidunt id faucibus eget, sagittis sed enim. Nunc nec dapibus odio."
+          },
+          "ContainedPart": {
+            "ListContentItemId": "[js: variables('blogContentItemId')]",
+            "Order": 0
+          }
         }
       ]
     },
@@ -1697,6 +2016,10 @@
         {
           "SourcePath": "advetising_icon.png",
           "TargetPath": "advetising_icon.png"
+        },
+        {
+          "SourcePath": "blog_post_1_full.jpg",
+          "TargetPath": "blog_post_1_full.jpg"
         },
         {
           "SourcePath": "client_1.png",
@@ -1723,8 +2046,8 @@
           "TargetPath": "web_design_icon.png"
         },
         {
-          "SourcePath": "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf",
-          "TargetPath": "mediafields/LandingPage/4nakpj1xs4e83yb96eynd7dtwn/de7869459f7187bb99f79d684d6916c3.pdf"
+          "SourcePath": "mediafields/LandingPage/Documents/Sample.pdf",
+          "TargetPath": "mediafields/LandingPage/Documents/Sample.pdf"
         }
       ]
     },
@@ -1777,21 +2100,27 @@
               "Step": {
                 "IncludeAll": false,
                 "ContentTypes": [
+                  "Blog",
+                  "BlogPost",
                   "Client",
                   "Container",
                   "Education",
                   "Experience",
                   "LandingPage",
                   "Service",
+                  "Skill",
                   "Testimonial"
                 ],
                 "ContentParts": [
+                  "Blog",
+                  "BlogPost",
                   "Client",
                   "Container",
                   "Education",
                   "Experience",
                   "LandingPage",
                   "Service",
+                  "Skill",
                   "Testimonial",
                   "PersonPart"
                 ],
