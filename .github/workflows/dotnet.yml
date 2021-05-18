@@ -40,11 +40,11 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Dev Pack
-      if: github.ref == 'refs/heads/dev'
+      if: matrix.os == 'ubuntu-latest' && github.ref == 'refs/heads/dev'
       run: dotnet pack -c Release -v normal -p:PackageVersion=$GITHUB_RUN_ID src/$PROJECT_NAME/$PROJECT_NAME.csproj
 
     - name: Prod Pack
-      if: github.ref == 'refs/heads/main'
+      if: matrix.os == 'ubuntu-latest' && github.ref == 'refs/heads/main'
       run: dotnet pack -c Release -v normal src/$PROJECT_NAME/$PROJECT_NAME.csproj
 
     - name: Upload Artifact
